@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2f8f84" />
+      <stop offset="100%" stop-color="#177d77" />
+    </linearGradient>
+    <linearGradient id="mattressGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <drop-shadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bgGrad)" />
+  <g transform="translate(150, 100)" filter="url(#dropShadow)">
+    <!-- Base Board -->
+    <rect x="0" y="140" width="500" height="30" rx="6" fill="#1e293b" />
+    <!-- Legs -->
+    <rect x="30" y="170" width="20" height="30" rx="3" fill="#0f172a" />
+    <rect x="450" y="170" width="20" height="30" rx="3" fill="#0f172a" />
+    <rect x="240" y="170" width="20" height="30" rx="3" fill="#0f172a" />
+    
+    <!-- Mattress Body -->
+    <rect x="0" y="40" width="500" height="100" rx="16" fill="url(#mattressGrad)" />
+    
+    <!-- Tufting details -->
+    <circle cx="80" cy="75" r="4" fill="#cbd5e1" />
+    <circle cx="160" cy="75" r="4" fill="#cbd5e1" />
+    <circle cx="240" cy="75" r="4" fill="#cbd5e1" />
+    <circle cx="320" cy="75" r="4" fill="#cbd5e1" />
+    <circle cx="400" cy="75" r="4" fill="#cbd5e1" />
+    
+    <circle cx="120" cy="105" r="4" fill="#cbd5e1" />
+    <circle cx="200" cy="105" r="4" fill="#cbd5e1" />
+    <circle cx="280" cy="105" r="4" fill="#cbd5e1" />
+    <circle cx="360" cy="105" r="4" fill="#cbd5e1" />
+    <circle cx="440" cy="105" r="4" fill="#cbd5e1" />
+
+    <!-- Pillow -->
+    <rect x="25" y="15" width="100" height="35" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+    <!-- Blanket/Throw -->
+    <path d="M 320 40 L 490 40 A 10 10 0 0 1 500 50 L 500 140 L 300 140 Z" fill="#21c5b7" opacity="0.8" />
+  </g>
+  <text x="50%" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">Premium Custom Sleep System</text>
+</svg>

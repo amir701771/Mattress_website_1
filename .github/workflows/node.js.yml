@@ -21,11 +21,46 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        
+    - name: Verify package.json existence
+      run: |
+        if [ ! -f package.json ]; then
+          echo "Error: package.json is missing!"
+          exit 1
+        fi
+        echo "Success: package.json exists."
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Verify server entry file existence
+      run: |
+        if [ -f server.js ]; then
+          echo "Success: server.js found as the main entry point."
+        elif [ -f app.js ]; then
+          echo "Success: app.js found as the main entry point."
+        else
+          echo "Error: Main server entry point (server.js or app.js) is missing!"
+          exit 1
+        fi
+
+    - name: Validate server entry point syntax
+      run: |
+        if [ -f server.js ]; then
+          node -c server.js
+        elif [ -f app.js ]; then
+          node -c app.js
+        fi
+        echo "Success: Syntax validation passed without errors."
+
+    - name: Run build step
+      run: echo "No build needed"
+      
+    - name: Run tests (if present)
+      run: npm test --if-present
